@@ -62,5 +62,6 @@ require_once 'core/handleForms.php';
             <input type="submit" name="registerUserBtn" value="Register">
         </p>
     </form>
+    <p>You already have an account? You may login <a href="login.php">here</a>.</p>
 </body>
 </html>

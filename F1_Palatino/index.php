@@ -1,6 +1,7 @@
 <?php require_once 'core/dbConfig.php'; ?>
 <?php require_once 'core/models.php'; ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,6 @@
 	<title>Applicant Search</title>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-	<!-- Custom CSS Styles -->
 	<style>
 		body {
 			font-family: Times New Roman, sans-serif;
@@ -59,7 +59,7 @@
 
 		th, td {
 			padding: 12px;
-			border: 3px double; #ddd;
+			border: px double; #ddd;
 		}
 
 		th {
@@ -103,7 +103,7 @@
 	<?php } unset($_SESSION['message']); ?>
 
 	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="GET">
-		<p><a href="login.php">LOGOUT</a></p>
+		<p style="font-weight: bold;"><a href="login.php">LOGOUT</a></p>
 		<input type="text" name="searchInput" placeholder="Search here">
 		<input type="submit" name="searchBtn">
 	</form>
@@ -160,6 +160,7 @@
 					</td>
 				</tr>
 			<?php } ?>
+			
 		<?php } ?>
 	</table>
 </body>

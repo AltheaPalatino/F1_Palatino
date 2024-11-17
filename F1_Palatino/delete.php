@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<h1>Are you sure you want to delete this applicant?</h1>
+	<h1 style="color: red;">Are you sure you want to delete this applicant?</h1>
 	<?php 
 		$applicant = getApplicantByID($pdo, $_GET['id']); 
 		if (!$applicant) {

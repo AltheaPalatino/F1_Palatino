@@ -7,14 +7,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Edit Applicant</title>
 	<link rel="stylesheet" href="styles.css">
+<style>
+	p{
+	font-weight: bold;
+}
+</style>
+	
 </head>
 <body>
 	<?php 
 		$getApplicantByID = getApplicantByID($pdo, $_GET['id']); 
 	?>
-	<h1>Edit Applicant Information</h1>
-	<form action="core/handleForms.php" method="POST"> <!-- Removed id from URL -->
-		<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"> <!-- Added hidden input -->
+	<h1 style="color: red;">Edit Applicant Information</h1>
+	<form action="core/handleForms.php" method="POST"> 
+		<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"> 
 		<p>
 			<label for="first_name">First Name</label> 
 			<input type="text" name="first_name" value="<?php echo $getApplicantByID['first_name']; ?>">
