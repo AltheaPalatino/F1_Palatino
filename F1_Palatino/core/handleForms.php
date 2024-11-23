@@ -7,16 +7,14 @@ require_once 'models.php';
 
 if (isset($_POST['registerUserBtn'])) {
     $username = trim($_POST['username']);
-    $first_name = trim($_POST['first_name']);
-    $last_name = trim($_POST['last_name']);
-    $password = trim($_POST['password']);
-    $confirm_password = trim($_POST['confirm_password']);
+    $password = trim($_POST['password']); // Add this line
+        $confirm_password = trim($_POST['confirm_password']);
 
-    if (!empty($username) && !empty($first_name) && !empty($last_name) && 
+    if (!empty($username) && 
         !empty($password) && !empty($confirm_password)) {
 
         if ($password == $confirm_password) {
-            $insertQuery = insertNewUser($pdo, $username, $first_name, $last_name, 
+            $insertQuery = insertNewUser($pdo, $username,
                 password_hash($password, PASSWORD_DEFAULT));
 
             if ($insertQuery['status'] == '200') {

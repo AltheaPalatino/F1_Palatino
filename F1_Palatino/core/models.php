@@ -29,17 +29,17 @@ function checkIfUserExists($pdo, $username) {
     return $response;
 }
 
-function insertNewUser($pdo, $username, $first_name, $last_name, $password) {
+function insertNewUser($pdo, $username, $password) {
     $response = array();
     $checkIfUserExists = checkIfUserExists($pdo, $username); 
 
     if (!$checkIfUserExists['result']) {
-        $sql = "INSERT INTO user_accounts (username, first_name, last_name, password) 
-        VALUES (?,?,?,?)";
+        $sql = "INSERT INTO user_accounts (username, password) 
+        VALUES (?,?)";
 
         $stmt = $pdo->prepare($sql);
 
-        if ($stmt->execute([$username, $first_name, $last_name, $password])) {
+        if ($stmt->execute([$username, $password])) {
             $response = array(
                 "status" => "200",
                 "message" => "User successfully inserted!"

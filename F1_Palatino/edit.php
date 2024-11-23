@@ -50,8 +50,7 @@
 			<input type="text" name="application_status" value="<?php echo $getApplicantByID['application_status']; ?>">
 		</p>
 		<p>
-			<input type="submit" value="Save" name="editUserBtn"> <!-- Corrected name -->
-		</p>
+			<input type="submit" value="Save" name="editUserBtn">
 	</form>
 </body>
 </html>
